@@ -1,0 +1,6 @@
+{
+  "name": "Tiger Analytics Weather Intelligence",
+  "description": "Enterprise-grade weather forecasting, analytics, and outdoor intelligence powered by Tiger Analytics brand design and Open-Meteo high precision APIs.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
