@@ -134,7 +134,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         <form onSubmit={handleFormSubmit} className="relative flex items-center">
           <div className="absolute left-4 text-slate-400 pointer-events-none">
             {isSearching || isLoadingWeather ? (
-              <Loader2 className="w-5 h-5 animate-spin text-[#FF5F00]" />
+              <Loader2 className="w-5 h-5 animate-spin text-blue-500" />
             ) : (
               <Search className="w-5 h-5" />
             )}
@@ -151,7 +151,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
               if (suggestions.length > 0) setShowDropdown(true);
             }}
             placeholder="Search city, region, or country (e.g. London, Tokyo, Miami)..."
-            className="w-full pl-12 pr-28 py-3.5 bg-[#152238]/90 hover:bg-[#152238] focus:bg-[#0A1128] border border-slate-700/80 focus:border-[#FF5F00] text-white placeholder-slate-400 rounded-2xl shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-[#FF5F00]/20 text-sm sm:text-base"
+            className="w-full pl-12 pr-28 py-3.5 bg-slate-800/90 hover:bg-slate-800 focus:bg-slate-900 border border-slate-700/80 focus:border-blue-500 text-white placeholder-slate-400 rounded-2xl shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-blue-500/20 text-sm sm:text-base"
           />
 
           {query && (
@@ -170,7 +170,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           {/* Search trigger button */}
           <button
             type="submit"
-            className="absolute right-2.5 px-4 py-2 bg-gradient-to-r from-[#FF5F00] to-orange-600 hover:from-orange-500 hover:to-[#FF5F00] text-white font-semibold text-xs sm:text-sm rounded-xl transition-all shadow-md flex items-center gap-1.5"
+            className="absolute right-2.5 px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium text-xs sm:text-sm rounded-xl transition-all shadow-md flex items-center gap-1.5"
           >
             Search
           </button>
@@ -238,7 +238,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({
 
         {/* Quick Presets */}
         <div className="flex items-center gap-1.5 overflow-x-auto py-1 no-scrollbar">
-          <span className="text-slate-400 hidden sm:inline mr-1 font-medium">Popular:</span>
+          <span className="text-slate-400 hidden sm:inline mr-1">Popular:</span>
           {DEFAULT_CITIES.slice(0, 5).map((preset) => {
             const isCurrent = selectedLocation?.name.toLowerCase() === preset.name.toLowerCase();
             return (
@@ -247,8 +247,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({
                 onClick={() => onSelectLocation(preset)}
                 className={`px-2.5 py-1 rounded-lg border text-xs whitespace-nowrap transition-all ${
                   isCurrent
-                    ? 'bg-[#FF5F00]/25 border-[#FF5F00] text-orange-200 font-semibold shadow-sm'
-                    : 'bg-[#152238]/80 border-slate-700/60 text-slate-300 hover:bg-slate-700/80 hover:text-white'
+                    ? 'bg-blue-600/30 border-blue-500 text-blue-300 font-semibold'
+                    : 'bg-slate-800/60 border-slate-700/60 text-slate-300 hover:bg-slate-700/80 hover:text-white'
                 }`}
               >
                 {preset.name}

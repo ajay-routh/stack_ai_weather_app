@@ -51,22 +51,22 @@ export const WeatherCharts: React.FC<WeatherChartsProps> = ({
 
   return (
     <div className="w-full max-w-4xl mx-auto mb-8 px-4">
-      <div className="bg-[#152238]/90 border border-slate-700/80 rounded-3xl p-5 sm:p-6 shadow-xl">
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl">
         {/* Header & Chart Tabs */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
           <div className="flex items-center gap-2">
-            <TrendingUp className="w-5 h-5 text-[#FF5F00]" />
+            <TrendingUp className="w-5 h-5 text-emerald-400" />
             <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
               Visual Temperature & Rain Analytics
             </h3>
           </div>
 
-          <div className="bg-[#0A1128] p-1 rounded-xl flex items-center text-xs font-semibold self-start sm:self-auto border border-slate-700/80">
+          <div className="bg-slate-800 p-1 rounded-xl flex items-center text-xs font-semibold self-start sm:self-auto border border-slate-700/60">
             <button
               onClick={() => setActiveTab('daily')}
               className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
                 activeTab === 'daily'
-                  ? 'bg-[#FF5F00] text-white shadow-md font-bold'
+                  ? 'bg-blue-600 text-white shadow-md'
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
@@ -77,7 +77,7 @@ export const WeatherCharts: React.FC<WeatherChartsProps> = ({
               onClick={() => setActiveTab('hourly')}
               className={`px-3 py-1.5 rounded-lg transition-all flex items-center gap-1.5 ${
                 activeTab === 'hourly'
-                  ? 'bg-[#FF5F00] text-white shadow-md font-bold'
+                  ? 'bg-blue-600 text-white shadow-md'
                   : 'text-slate-400 hover:text-slate-200'
               }`}
             >
@@ -94,8 +94,8 @@ export const WeatherCharts: React.FC<WeatherChartsProps> = ({
               <AreaChart data={dailyChartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                 <defs>
                   <linearGradient id="maxTempGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#FF5F00" stopOpacity={0.4} />
-                    <stop offset="95%" stopColor="#FF5F00" stopOpacity={0.0} />
+                    <stop offset="5%" stopColor="#f59e0b" stopOpacity={0.4} />
+                    <stop offset="95%" stopColor="#f59e0b" stopOpacity={0.0} />
                   </linearGradient>
                   <linearGradient id="minTempGrad" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="5%" stopColor="#3b82f6" stopOpacity={0.4} />
@@ -112,11 +112,11 @@ export const WeatherCharts: React.FC<WeatherChartsProps> = ({
                     if (active && payload && payload.length) {
                       const data = payload[0].payload;
                       return (
-                        <div className="bg-[#0A1128] border border-slate-700 p-3 rounded-xl shadow-2xl text-xs space-y-1">
+                        <div className="bg-slate-900 border border-slate-700 p-3 rounded-xl shadow-2xl text-xs space-y-1">
                           <div className="font-bold text-white border-b border-slate-800 pb-1">
                             {label} ({data.condition})
                           </div>
-                          <div className="text-[#FF5F00] font-bold">
+                          <div className="text-amber-400 font-semibold">
                             Max Temp: {data.maxTemp}{unitLabel}
                           </div>
                           <div className="text-blue-400 font-semibold">
@@ -136,7 +136,7 @@ export const WeatherCharts: React.FC<WeatherChartsProps> = ({
                   type="monotone"
                   dataKey="maxTemp"
                   name="Max Temp"
-                  stroke="#FF5F00"
+                  stroke="#f59e0b"
                   strokeWidth={2.5}
                   fillOpacity={1}
                   fill="url(#maxTempGrad)"

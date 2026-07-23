@@ -106,7 +106,7 @@ export default function App() {
     : false;
 
   return (
-    <div className="min-h-screen bg-[#0A1128] text-slate-100 font-sans antialiased selection:bg-[#FF5F00] selection:text-white flex flex-col">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-500 selection:text-white flex flex-col">
       {/* App Header */}
       <Header
         tempUnit={tempUnit}
@@ -139,12 +139,12 @@ export default function App() {
         {/* Loading State Skeleton */}
         {isLoading && !weatherData && (
           <div className="w-full max-w-4xl mx-auto my-16 px-4 text-center space-y-4">
-            <div className="p-8 rounded-3xl bg-[#152238] border border-slate-700/80 shadow-2xl flex flex-col items-center justify-center min-h-[320px]">
+            <div className="p-8 rounded-3xl bg-slate-900 border border-slate-800 shadow-2xl flex flex-col items-center justify-center min-h-[320px]">
               <div className="relative">
-                <div className="w-16 h-16 rounded-2xl bg-[#FF5F00]/20 border border-[#FF5F00]/40 flex items-center justify-center text-[#FF5F00]">
-                  <CloudSun className="w-8 h-8 animate-pulse text-[#FF5F00]" />
+                <div className="w-16 h-16 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400">
+                  <CloudSun className="w-8 h-8 animate-pulse text-sky-400" />
                 </div>
-                <Loader2 className="w-8 h-8 text-[#FF5F00] animate-spin absolute -top-2 -right-2" />
+                <Loader2 className="w-8 h-8 text-blue-500 animate-spin absolute -top-2 -right-2" />
               </div>
               <h3 className="text-lg font-bold text-white mt-6">
                 Fetching Atmospheric Forecast...
@@ -208,15 +208,14 @@ export default function App() {
       </main>
 
       {/* App Footer */}
-      <footer className="bg-[#070C1E] border-t border-slate-800/80 py-6 text-center text-xs text-slate-400">
+      <footer className="bg-slate-900/60 border-t border-slate-800/80 py-6 text-center text-xs text-slate-500">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <Globe className="w-4 h-4 text-[#FF5F00]" />
-            <span className="font-semibold text-slate-300">Tiger Analytics</span>
-            <span>• Advanced Weather Intelligence Platform</span>
+            <Globe className="w-4 h-4 text-sky-400" />
+            <span>Weather Intelligence • Open-Meteo Geocoding & Forecast APIs</span>
           </div>
           <div>
-            Powered by Open-Meteo HTTPS Geocoding & High Precision Forecast APIs
+            Non-commercial open weather license • Updated dynamically
           </div>
         </div>
       </footer>

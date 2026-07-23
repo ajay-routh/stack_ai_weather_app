@@ -53,10 +53,6 @@ export const CurrentWeatherCard: React.FC<CurrentWeatherCardProps> = ({
         {/* Top Location Bar & Favorite Star */}
         <div className="flex items-start justify-between gap-4 relative z-10">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-black/30 backdrop-blur-md border border-white/20 text-[10px] font-bold text-orange-300 uppercase tracking-wider mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#FF5F00]" />
-              Tiger Analytics Intelligence
-            </div>
             <div className="flex items-center gap-2">
               <MapPin className="w-5 h-5 text-white/90 animate-bounce" />
               <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight drop-shadow-sm">
@@ -72,12 +68,12 @@ export const CurrentWeatherCard: React.FC<CurrentWeatherCardProps> = ({
             onClick={onToggleFavorite}
             className={`p-3 rounded-2xl backdrop-blur-md border transition-all ${
               isFavorite
-                ? 'bg-[#FF5F00] text-white border-orange-400 shadow-lg shadow-[#FF5F00]/40'
+                ? 'bg-amber-400 text-slate-900 border-amber-300 shadow-lg shadow-amber-400/30'
                 : 'bg-white/10 hover:bg-white/20 text-white border-white/20'
             }`}
             title={isFavorite ? 'Remove from favorites' : 'Save to favorites'}
           >
-            <Star className={`w-5 h-5 ${isFavorite ? 'fill-white' : ''}`} />
+            <Star className={`w-5 h-5 ${isFavorite ? 'fill-slate-900' : ''}`} />
           </button>
         </div>
 

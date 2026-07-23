@@ -1,6 +1,6 @@
 {
-  "name": "Tiger Analytics Weather Intelligence",
-  "description": "Enterprise-grade weather forecasting, analytics, and outdoor intelligence powered by Tiger Analytics brand design and Open-Meteo high precision APIs.",
+  "name": "Weather Intelligence",
+  "description": "Interactive weather forecasting and planning app with city search, temperature trends, 7-day forecast, and travel recommendations using Open-Meteo API.",
   "requestFramePermissions": ["geolocation"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

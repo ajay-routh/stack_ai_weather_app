@@ -25,19 +25,19 @@ export const PlanningRecommendations: React.FC<PlanningRecommendationsProps> = (
     <div className="w-full max-w-4xl mx-auto mb-10 px-4 space-y-6">
       {/* 1. Best Travel / Outing Day Highlight Banner */}
       {bestTravelDay && (
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-[#152238] via-[#1C2C48] to-[#0A1128] p-6 border border-[#FF5F00]/40 shadow-2xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-900 via-blue-900 to-slate-900 p-6 border border-indigo-500/30 shadow-2xl">
           <div className="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-            <Sparkles className="w-40 h-40 text-[#FF5F00]" />
+            <Sparkles className="w-40 h-40 text-amber-300" />
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-2xl bg-[#FF5F00] text-white shadow-lg shadow-[#FF5F00]/30 flex-none">
+              <div className="p-3 rounded-2xl bg-amber-400 text-slate-950 shadow-lg shadow-amber-400/20 flex-none">
                 <CalendarCheck className="w-7 h-7" />
               </div>
               <div>
-                <div className="text-xs font-bold uppercase tracking-wider text-orange-300 flex items-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-[#FF5F00]" /> Best Day for Outings
+                <div className="text-xs font-bold uppercase tracking-wider text-amber-300 flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5" /> Best Day for Outings
                 </div>
                 <h3 className="text-xl font-black text-white mt-0.5">
                   {bestTravelDay.dayName}, {bestTravelDay.date}
@@ -48,9 +48,9 @@ export const PlanningRecommendations: React.FC<PlanningRecommendationsProps> = (
               </div>
             </div>
 
-            <div className="bg-[#0A1128]/80 border border-slate-700/80 px-4 py-2.5 rounded-2xl text-center self-start sm:self-auto flex-none">
+            <div className="bg-slate-950/60 border border-slate-700/60 px-4 py-2.5 rounded-2xl text-center self-start sm:self-auto flex-none">
               <div className="text-xs text-slate-400">Peak Conditions</div>
-              <div className="text-sm font-extrabold text-[#FF5F00]">
+              <div className="text-sm font-extrabold text-amber-300">
                 {bestTravelDay.maxTemp}°C / {bestTravelDay.minTemp}°C
               </div>
             </div>
@@ -59,9 +59,9 @@ export const PlanningRecommendations: React.FC<PlanningRecommendationsProps> = (
       )}
 
       {/* 2. Activity Suitability Cards Grid */}
-      <div className="bg-[#152238]/90 border border-slate-700/80 rounded-3xl p-5 sm:p-6 shadow-xl">
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl">
         <div className="flex items-center gap-2 mb-6">
-          <Compass className="w-5 h-5 text-[#FF5F00]" />
+          <Compass className="w-5 h-5 text-sky-400" />
           <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
             Outdoor & Travel Intelligence
           </h3>
@@ -136,9 +136,9 @@ export const PlanningRecommendations: React.FC<PlanningRecommendationsProps> = (
 
       {/* 3. Smart Packing Advisor */}
       {packingAdvice.length > 0 && (
-        <div className="bg-[#152238]/90 border border-slate-700/80 rounded-3xl p-5 sm:p-6 shadow-xl">
+        <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl">
           <div className="flex items-center gap-2 mb-4">
-            <Luggage className="w-5 h-5 text-[#FF5F00]" />
+            <Luggage className="w-5 h-5 text-amber-400" />
             <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
               Smart Travel & Packing Recommendations
             </h3>
@@ -148,7 +148,7 @@ export const PlanningRecommendations: React.FC<PlanningRecommendationsProps> = (
             {packingAdvice.map((item, idx) => (
               <div
                 key={idx}
-                className="p-3.5 rounded-2xl bg-[#0A1128]/70 border border-slate-700/50 text-xs text-slate-200 font-medium flex items-center gap-2.5"
+                className="p-3.5 rounded-2xl bg-slate-800/50 border border-slate-700/50 text-xs text-slate-200 font-medium flex items-center gap-2.5"
               >
                 <span>{item}</span>
               </div>

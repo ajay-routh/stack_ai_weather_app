@@ -30,10 +30,10 @@ export const SevenDayForecast: React.FC<SevenDayForecastProps> = ({
 
   return (
     <div className="w-full max-w-4xl mx-auto mb-8 px-4">
-      <div className="bg-[#152238]/90 border border-slate-700/80 rounded-3xl p-5 sm:p-6 shadow-xl">
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
-            <Calendar className="w-5 h-5 text-[#FF5F00]" />
+            <Calendar className="w-5 h-5 text-indigo-400" />
             <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
               7-Day Weather Outlook
             </h3>
@@ -56,7 +56,7 @@ export const SevenDayForecast: React.FC<SevenDayForecastProps> = ({
             return (
               <div
                 key={day.date}
-                className="bg-[#0A1128]/70 hover:bg-[#0A1128] border border-slate-700/50 rounded-2xl transition-all overflow-hidden"
+                className="bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 rounded-2xl transition-all overflow-hidden"
               >
                 <button
                   onClick={() => toggleExpand(day.date)}
@@ -64,8 +64,8 @@ export const SevenDayForecast: React.FC<SevenDayForecastProps> = ({
                 >
                   {/* Day & Icon */}
                   <div className="flex items-center gap-3 min-w-[160px]">
-                    <div className="p-2 rounded-xl bg-[#152238] text-sky-400 flex-none">
-                      <WeatherIcon name={day.weatherInfo.iconName} className="w-5 h-5 text-sky-400" />
+                    <div className="p-2 rounded-xl bg-slate-800 text-sky-400 flex-none">
+                      <WeatherIcon name={day.weatherInfo.iconName} className="w-5 h-5" />
                     </div>
                     <div>
                       <div className="text-sm font-bold text-white flex items-center gap-2">
@@ -100,9 +100,9 @@ export const SevenDayForecast: React.FC<SevenDayForecastProps> = ({
                     </span>
 
                     {/* Relative range track */}
-                    <div className="flex-1 h-2 bg-[#0A1128] rounded-full overflow-hidden relative border border-slate-800">
+                    <div className="flex-1 h-2 bg-slate-900 rounded-full overflow-hidden relative">
                       <div
-                        className="absolute h-full rounded-full bg-gradient-to-r from-blue-500 via-amber-400 to-[#FF5F00]"
+                        className="absolute h-full rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-amber-400"
                         style={{
                           left: `${leftOffsetPercent}%`,
                           width: `${barWidthPercent}%`

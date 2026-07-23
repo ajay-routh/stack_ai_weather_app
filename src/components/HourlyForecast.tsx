@@ -14,15 +14,15 @@ export const HourlyForecast: React.FC<HourlyForecastProps> = ({ hourly, tempUnit
 
   return (
     <div className="w-full max-w-4xl mx-auto mb-8 px-4">
-      <div className="bg-[#152238]/90 border border-slate-700/80 rounded-3xl p-5 sm:p-6 shadow-xl">
+      <div className="bg-slate-900/90 border border-slate-800 rounded-3xl p-5 sm:p-6 shadow-xl">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <Clock className="w-5 h-5 text-[#FF5F00]" />
+            <Clock className="w-5 h-5 text-sky-400" />
             <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
               24-Hour Timeline
             </h3>
           </div>
-          <span className="text-xs text-slate-400 font-medium">Hourly forecast</span>
+          <span className="text-xs text-slate-400">Hourly forecast</span>
         </div>
 
         {/* Scrollable hourly track */}
@@ -34,16 +34,16 @@ export const HourlyForecast: React.FC<HourlyForecastProps> = ({ hourly, tempUnit
                 key={item.time}
                 className={`flex-none w-24 p-3.5 rounded-2xl flex flex-col items-center justify-between text-center transition-all border ${
                   isNow
-                    ? 'bg-[#FF5F00]/20 border-[#FF5F00] text-white shadow-md shadow-[#FF5F00]/15 font-semibold'
-                    : 'bg-[#0A1128]/70 border-slate-700/50 hover:bg-[#0A1128] text-slate-200'
+                    ? 'bg-blue-600/20 border-blue-500/80 text-white shadow-md shadow-blue-500/10'
+                    : 'bg-slate-800/60 border-slate-700/50 hover:bg-slate-800 text-slate-200'
                 }`}
               >
-                <div className={`text-xs font-semibold mb-2 ${isNow ? 'text-[#FF5F00]' : 'text-slate-300'}`}>
+                <div className="text-xs font-semibold mb-2 text-slate-300">
                   {isNow ? 'Now' : item.hourLabel}
                 </div>
 
-                <div className="my-2 p-2 rounded-xl bg-[#152238]">
-                  <WeatherIcon name={item.weatherInfo.iconName} className={`w-6 h-6 ${isNow ? 'text-[#FF5F00]' : 'text-sky-400'}`} />
+                <div className="my-2 p-2 rounded-xl bg-slate-800/80">
+                  <WeatherIcon name={item.weatherInfo.iconName} className="w-6 h-6 text-sky-400" />
                 </div>
 
                 <div className="text-base font-bold text-white my-1">
